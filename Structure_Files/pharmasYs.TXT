@@ -1,0 +1,132 @@
+1.Distribution Manager
+     1.Employee_id(primary)
+	 2.name
+	 2.Address
+	 4.phone no
+	 5. email id
+	 6.gender
+2.Product:
+	1. Product Code(primary)
+	2. Product Name
+	3. Product Origin
+	4. Pack Size
+	5. Trade price
+	6. TP+VAT
+3.Doctors:
+    1.Doctors id(primary)
+	2.Doctors Name
+	3.Speciality
+	4.degree
+	5.Work Institution 
+	6.Chamber Address
+	7.Phone
+	8.date of birth
+	9.Date of Marriage
+	10.gender
+	11.MPO id
+	
+4.Pharmacy:
+   1.Pharmacyid(primary)
+   2.name
+   3.area code
+   4.address(village, district,union)
+   5.phone
+5.Chemist:
+    1.Chemist Id(primary)
+	2.name
+	3.Phone Number
+	4.Date of birth
+	5.Date of Marriage
+	6.Address(Village,district,union)
+	7.gender
+6.PPM:
+	 1.PPM id (prinary key)
+	 2.Employee id
+	 3.date
+	 4.type
+	 5.quantity
+7.MPO:
+ 
+	1.Employee_id(primary)
+	 2.name
+	 2.Address
+	 3.phone no
+	 5. area code
+	 6.Gender
+	 7.Manager id
+8.Order:
+ 1.Orderid
+ 2.Pharmacyid
+ 3.Product code
+ 6.Quantity
+ 7.Price
+ 8.Date
+ 9.depo id
+ 
+9.Depot Manager:
+   1.Employee id
+   2.name
+   3.Address
+   4.phone no
+	5. area code
+	6.Gender
+	7.depot id
+10.DEPO:
+  1.Depo Id
+  2.Address
+  3.Phone
+  4.Area coode
+  
+11.Stock:
+   1.depo id
+   2.received date
+   3.Product code
+   4.quantity
+12.Delivary:
+   1.delivaryid
+   2.delivary date
+   3.Payment type
+   4.order id
+13.MPO manager
+	1.Employee_id(primary)
+	 2.name
+	 2.Address
+	 3.phone no
+	 5. area code
+	 6.Gender
+	 7.Manager id
+	 8.NumberofMPO
+14.Expense Bill
+   2.employee id
+   3.date
+   4.Tour details
+   5.daily allowence
+   6.fare
+   7.status
+   8. MPO_Manger_id
+ 17. DailyWorkPlan
+	1.date
+	2.Employee id
+	3.Reporting place(Doctor's name,Pharmacy name,time,product to be promoted)
+	4.MPO_manager_id
+18.Tour Program
+  1.employee id
+  2.date
+  4.product to  be promoted
+  5.Target Places
+  6.MPO manager id
+ 19.Daily report
+	1.date
+	2.Employee id
+	3.Reporting place(Doctor's name,Pharmacy name,time,product to be promoted)
+	4.MPO_manager_id
+  
+
+ 
+ 
+
+ 
+ 
+
+
+	 
