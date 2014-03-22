@@ -1,0 +1,208 @@
+1. 	CREATE TABLE employee(
+	emp_id NUMBER (11),
+	password	VARCHAR (50),
+	emp_type	VARCHAR (20),
+	emp_name 	VARCHAR (25),
+	house_no	VARCHAR (5),
+	road_no		VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+	salary 		NUMBER (11),
+	gender		VARCHAR (10),
+	join_date	DATE,
+	birth_date 	DATE,
+	area_code  	NUMBER (11),
+	emp_cv		VARCHAR (50000),
+);
+	
+2.  CREATE TABLE ppm(
+	ppm_id      NUMBER (11),
+	supply_date DATE,
+	quantity    NUMBER(4),
+	PPM_type	VARCHAR(20),
+	featured_product_code NUMBER (11)
+);
+   
+4.  CREATE TABLE ppm_mio(
+	emp_id         	NUMBER (11),
+	ppm_id         	NUMBER (11),
+	quantity    	NUMBER(4),
+	received_date	DATE
+);
+   
+5.  CREATE TABLE mio(
+	emp_id    		NUMBER (11),
+	mio_manager_id 	NUMBER (11),
+	category		VARCHAR (20)
+);
+	
+6.  CREATE TABLE mio_visit_doctor(
+	mio_id 		NUMBER (11),
+	doctor_id 	NUMBER (11),
+	visit_date	DATE,
+	visit_time 	DATETIME,
+	visit_done 	CHAR(1),
+	product_promoted NUMBER (11)
+);
+	
+7.  CREATE TABLE mio_visit_pharmacy(
+	mio_id 		NUMBER (11),
+	pharmacy_id NUMBER (11),
+	visit_date	DATE
+	visit_done 	CHAR(1),
+	visit_time 	DATETIME
+);
+	
+8.  CREATE TABLE mio_suggested_doctor(
+	mio_id 				NUMBER (11),
+	suggested_doc_id	NUMBER (11),
+	name 				VARCHAR (50),
+	house_no			VARCHAR (5),
+	road_no				VARCHAR (5),
+	post_office 		VARCHAR (15),
+	district			VARCHAR (15),
+	phone_no			VARCHAR (15),
+	email				VARCHAR (25),
+	gender				VARCHAR (10),
+	degree 				VARCHAR (20),
+	speciality 			VARCHAR (20),
+	institution			VARCHAR (50),
+	num_patient_per_day	NUMBER (5),
+	birth_day			DATE,
+	marriage_day 		DATE
+);
+	
+9.  CREATE TABLE mio_suggested_pharmacy (
+	mio_id 				NUMBER (11),
+	suggested_pharmacy_id NUMBER (11),
+	name				VARCHAR (50),
+	area_code 			NUMBER (11),
+	house_no			VARCHAR (5),
+	road_no				VARCHAR (5),
+	post_office 		VARCHAR (15),
+	district			VARCHAR (15),
+	phone_no			VARCHAR (15),
+	email				VARCHAR (25),
+	sell_amount_per_day NUMBER (6),
+	established_date 	DATE
+);
+	
+10. CREATE TABLE doctor(
+	doctor_id 			NUMBER (11),
+	name 				VARCHAR (50),
+	house_no			VARCHAR (5),
+	road_no				VARCHAR (5),
+	post_office 		VARCHAR (15),
+	district			VARCHAR (15),
+	phone_no			VARCHAR (15),
+	email				VARCHAR (25),
+	gender				VARCHAR (10),
+	degree				VARCHAR (20),
+	speciality 			VARCHAR (20),
+	institution			VARCHAR (50),
+	num_patient_per_day	NUMBER (5),
+	birth_day			DATE,
+	marriage_day 		DATE
+);
+
+11. CREATE TABLE pharmacy(
+	pharmacy_id NUMBER (11),
+	name	VARCHAR (50),
+	area_code NUMBER (11),
+	house_no	VARCHAR (5),
+	road_no	VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+	sell_amount_per_day NUMBER (6),
+	established_date DATE
+);
+	
+12. CREATE TABLE chemist(
+	chemist_id NUMBER (11),
+	pharmacy_id NUMBER (11),
+	name VARCHAR (50),
+	house_no	VARCHAR (5),
+	road_no	VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+	gender	VARCHAR (10),
+	institution	VARCHAR (50),
+	degree VARCHAR (20),
+	join_date DATE,
+	birth_day	DATE,
+	marriage_day DATE
+);
+
+13. CREATE TABLE expense_bill(
+	emp_id NUMBER (11),
+	bill_date	DATE,
+	details VARCHAR (500),
+	remarks VARCHAR (500),
+	daily_allowance NUMBER (6),
+	fare NUMBER (6),
+	postage_cost NUMBER (6),
+	phone_cost NUMBER (6),
+	other_cost NUMBER (6),
+	total_cost NUMBER (6),
+	is_approved	CHAR(1)
+);
+
+14. CREATE TABLE DepoManager(
+	emp_id NUMBER(11),
+	depo_id NUMBER(11),
+	depo_name VARCHAR(10),
+	area_code VARCHAR(10),
+	house_no	VARCHAR (5),
+	road_no	VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+);
+
+15. CREATE TABLE orders(
+	order_id NUMBER(11),
+	pharmacy_id NUMBER(11),
+	emp_id NUMBER(11),
+	order_date DATE,
+	completed   CHAR(1)
+);
+
+16. CREATE TABLE order_product(
+	order_id NUMBER(11),
+	product_code VARCHAR(10),
+	quantity NUMBER(5)
+);
+
+17. CREATE TABLE product(
+	product_code NUMBER(10),
+	product_name VARCHAR(20),
+	product_origin VARCHAR(20),
+	pack_size NUMBER(4),
+	trade_price NUMBER(5),
+	trade_price+vat NUMBER(5)
+);
+18. CREATE TABLE stock(
+	stock_id NUMBER(11),
+	depo_id NUMBER(11),
+	received_date DATE,
+	supply_date  DATE
+);
+
+19. CREATE TABLE stock_product(
+	stock_id NUMBER(11),
+	product_code VARCHAR(10),
+	quantity NUMBER(4)
+);
+
+20. CREATE TABLE area(
+	area_code NUMBER(11),
+	district VARCHAR(15),
+	thana   VARCHAR(15)
+);
