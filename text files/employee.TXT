@@ -1,0 +1,67 @@
+CREATE TABLE employee(
+emp_id NUMBER (11) NOT NULL,
+password VARCHAR (50),
+emp_type VARCHAR (20),
+emp_name VARCHAR (25),
+house_no VARCHAR (5),
+road_no VARCHAR (5),
+post_office VARCHAR (15),
+district VARCHAR (15),
+phone_no VARCHAR (15),
+email VARCHAR (25),
+salary NUMBER (11),
+gender VARCHAR (10),
+join_date DATE,
+birth_date DATE,
+area_code NUMBER (11),
+emp_cv VARCHAR (500),
+primary key(emp_id)
+);
+
+create SEQUENCE set_employee_id
+ start with 100
+ increment by 1
+ cache 20;
+ 
+ create or replace trigger trigger_employee_id
+before insert on employee
+for each row
+begin 
+ :new.emp_id:=set_employee_id.nextval;
+ end;
+ /
+ 
+ 
+ // data insert with cv field null; are code starts with 101
+ //mios
+ insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date,area_code) values('1345','MIO','Abdul Karim','110/a','2','Rajarbag','Dhaka','01247891',
+ 'abdulkarim@yahoo.com',10000,'male','1-JAN-2009','2-FEB-1986',101);
+ 
+ 
+insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date,area_code) values('abcd','MIO','Mokbul haq','110/c','2','Rajarbag','Dhaka','017842681',
+ 'maokbulhoq@yahoo.com',12000,'male','1-JAN-2008','2-FEB-1984',101);
+ 
+ //mio manager
+ insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date,area_code) values('123','MIO MANAGER','Tanzeer Shovon','110/c','2','Sogujbag','Dhaka','01674740327',
+ 'tanzeer_s@yahoo.com',20000,'male','15-JAN-2006','2-FEB-1980',101);
+ 
+ //depo manager
+   insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date,area_code) values('xyz','DEPOT MANAGER','Tanzeer Hossain','110/c','2','Sogujbag','Dhaka','01674740337',
+ 'tanzeer_shovon@yahoo.com',20000,'male','15-FEB-2006','2-FEB-1980',101);
+ 
+ //Admin or Distribution Manager no area code for admins
+ 
+  insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date) values('xyz','MANAGER','Tanzeer ','68/A','2','Shahbag','Dhaka','01674740325',
+ 'tanzeer_shovon@yahoo.com',50000,'male','13-MAR-2006','2-AUG-1980');
+ 
+ insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date) values('xyz','MANAGER','Touhid','68/A','2','MIRPUR','Dhaka','01674740348',
+ 'tz08128@gmail.com',50000,'male','12-APR-2006','2-JUL-1979');
+ 
+ 
+ 

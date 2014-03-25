@@ -1,0 +1,28 @@
+CREATE TABLE ppm(
+ppm_id NUMBER (11),
+supply_date DATE,
+quantity NUMBER(4),
+PPM_type VARCHAR2(20),
+featured_product_code VARCHAR2 (11),
+primary key(ppm_id)
+);
+create SEQUENCE set_ppm_id
+ start with 100
+ increment by 1
+ cache 20;
+ 
+create or replace trigger trigger_ppm_id
+before insert on ppm
+for each row
+begin 
+ :new.ppm_id:=set_ppm_id.nextval;
+ end;
+ /
+ 
+ 
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,100,'pen','TAB-ACZ2');
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,50,'notebook','TAB-ACS2');
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,100,'fan','TAB-AFX1');
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,100,'pen','TAB-ACX2');
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,100,'notebook','TAB-AGN1');
+ insert into ppm(supply_date,quantity,ppm_type,featured_product_code) values(SYSDATE,50,'watch','TAB-ALD1');

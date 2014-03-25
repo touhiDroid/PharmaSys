@@ -1,0 +1,41 @@
+CREATE TABLE doctor(
+doctor_id NUMBER (11),
+name VARCHAR (50),
+house_no VARCHAR (5),
+road_no VARCHAR (5),
+post_office VARCHAR (15),
+district VARCHAR (15),
+phone_no VARCHAR (15),
+email VARCHAR (25),
+gender VARCHAR (10),
+degree VARCHAR (20),
+speciality VARCHAR (20),
+institution VARCHAR (50),
+num_patient_per_day NUMBER (5),
+birth_day DATE,
+marriage_day DATE,
+primary key(doctor_id)
+);
+
+create SEQUENCE set_doctor_id
+ start with 100
+ increment by 1
+ cache 20;
+ 
+ create or replace trigger trigger_doctor_id
+before insert on doctor
+for each row
+begin 
+ :new.doctor_id:=set_doctor_id.nextval;
+ end;
+ /
+ 
+ insert into doctor(name,house_no,road_no,post_office,district,phone_no,email,gender,degree,speciality,institution,
+ num_patient_per_day,birth_day,marriage_day) values('Abdur Rahman','324/A','2','Motijheel','Dhaka','01674740627','tansss@hotmail.com',
+ 'male','mbbs','medicine','Dhaka Medical College Hospital',100,'12-DEC-1982','11-NOV-2002');
+ insert into doctor(name,house_no,road_no,post_office,district,phone_no,email,gender,degree,speciality,institution,
+ num_patient_per_day,birth_day,marriage_day) values('Tanzeer Ahmad','564/B','2','Shobujbag','Dhaka','01674120001','tanszr@hotmail.com',
+ 'male','fcps','medicine','Bangladesh Medical College Hospital',200,'11-DEC-1982','12-FEB-2001');
+ insert into doctor(name,house_no,road_no,post_office,district,phone_no,email,gender,degree,speciality,institution,
+ num_patient_per_day,birth_day,marriage_day) values('Touhid Reza','90','4','Akua','Mymensingh','0125421585','rreza@gmail.com',
+ 'male','mbbs','surgery','Mymensingh Medical College Hospital',120,'12-JAN-1982','11-MAR-2000');
