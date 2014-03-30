@@ -1,0 +1,27 @@
+ CREATE TABLE order_product(
+	order_id NUMBER(11),
+	product_code VARCHAR(10),
+	quantity NUMBER(5),
+	primary key (order_id,product_code)
+);
+
+
+insert into order_product values(101,'TAB-ACZ2',200);
+insert into order_product values(101,'TAB-ACS2',100);
+insert into order_product values(101,'TAB-AFX1',250);
+insert into order_product values(101,'TAB-AFX2',100);
+insert into order_product values(101,'TAB-BLN1',50);
+insert into order_product values(101,'TAB-CLN3',105);
+insert into order_product values(101,'TAB-CLD1',125);
+insert into order_product values(101,'TAB-EMP1',175);
+insert into order_product values(101,'TAB-GRH1',175);
+
+insert into order_product values(102,'TAB-ACZ2',200);
+insert into order_product values(102,'TAB-ACS2',100);
+insert into order_product values(102,'TAB-AFX1',250);
+insert into order_product values(102,'TAB-AFX2',125);
+insert into order_product values(103,'TAB-BLN1',500);
+insert into order_product values(104,'TAB-CLN3',105);
+insert into order_product values(105,'TAB-CLD1',125);
+insert into order_product values(106,'TAB-EMP1',175);
+insert into order_product values(107,'TAB-GRH1',180);

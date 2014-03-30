@@ -1,8 +1,21 @@
  CREATE TABLE product(
-	product_code 	NUMBER(10),
-	product_name 	VARCHAR(20),
-	product_origin 	VARCHAR(20),
-	pack_size 		NUMBER(4),
-	trade_price 	NUMBER(5),
-	trade_price_vat NUMBER(5)
+product_code VARCHAR(15),
+product_name VARCHAR(20),
+product_origin VARCHAR(20),
+catagory VARCHAR(35),
+pack_size VARCHAR(15),
+trade_price NUMBER(5),
+trade_price_vat NUMBER(5),
+primary key(product_code)
 );
+
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-ACZ2','Aciliz Tablet','100',187.87,219.92);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-ACS2','Aciliz Plus Tablet','100','255.56',263.91);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-AFX1','Afix 200 Tablet','10',,219.92);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-AFX2','Afix 400 Tablet','6',225.56,263.91);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-BLN1','Beclovan Tablet',30,180.00,211.23);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-CLN3','Callon tablet',20,185.00,219.92);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-CLD1','Carbon D Tablet',15,120.00,212.00);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-EMP1','EMP 20 TABLET',10,100.23,120.92);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-GRH1','Giran 8 Tablet','20',187.87,219.92);
+insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-HPN1','Hepaximin 200 Tablet','20',300.75,351.88);

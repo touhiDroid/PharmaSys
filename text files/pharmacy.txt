@@ -1,0 +1,33 @@
+ CREATE TABLE pharmacy(
+	pharmacy_id NUMBER (11),
+	name	VARCHAR (50),
+	area_code NUMBER (11),
+	house_no	VARCHAR (5),
+	road_no	VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+	sell_amount_per_day NUMBER (6),
+	established_date DATE
+);
+create SEQUENCE set_pharmacy_id
+ start with 100
+ increment by 1
+ cache 20;
+ 
+create or replace trigger trigger_pharmacy_id
+before insert on pharmacy
+for each row
+begin 
+ :new.pharmacy_id:=set_pharmacy_id.nextval;
+ end;
+ /
+ insert into pharmacy(name,area_code,house_no,road_no,post_office,district,phone_no,email,sell_amount_per_day,established_date)
+ values('MAA Pharmacy',101,'65/A','123','Shobujbag','Dhaka','0124539874','tanzeer_hlw@hotmail.com',10000,'12-MAR-2001');
+ insert into pharmacy(name,area_code,house_no,road_no,post_office,district,phone_no,email,sell_amount_per_day,established_date)
+ values('Seba Pharmacy',101,'65/C','112','Shahjahanpur','Dhaka','012376523','tanzsd@hotmail.com',8000,'11-FEB-1998');
+ insert into pharmacy(name,area_code,house_no,road_no,post_office,district,phone_no,email,sell_amount_per_day,established_date)
+ values('Modern Pharmacy',102,'90','11','Mirour','Dhaka','016734527','mito_hlw@gmail.com',120000,'11-NOV-2005');
+ 
+ commit;
