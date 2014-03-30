@@ -9,12 +9,12 @@ echo '<!-- navbar -->
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-        <img src="images/icon.png" style="float: left; align: center;"/>
-        <a class="navbar-brand" href="#">Demo Pharmaceuticals Ltd.</a>
+        <img src="http://localhost/_DatabaseProject/PharmaSys/images/icon.png" style="float: left; align: center;"/>
+        <a class="navbar-brand" href="http://localhost/_DatabaseProject/PharmaSys">Demo Pharmaceuticals Ltd.</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li id="nav_home" class="active"> <a href="#">Home</a> </li>
+            <li id="nav_home" class="active"> <a href="http://localhost/_DatabaseProject/PharmaSys">Home</a> </li>
             <li id="nav_product">
                 <a id="" href="" class="top_link"><span>PRODUCTS</span></a>
                 <ul class="sub-list-item">
@@ -27,15 +27,23 @@ echo '<!-- navbar -->
                 </ul>
             <li>
             <li id="nav_about">    <a href="#">About</a>  </li>
-            <li id="nav_contact">    <a href="#">contact</a>  </li>
+            <li id="nav_contact">    <a href="#">Contact</a>  </li>
 
-          </ul>
-          <form class="navbar-form navbar-right" role="sign-in">
+          </ul>';
+$name = getSessionEmployeeName();
+if( isSessionSet() )
+  echo  '<p class="navbar-text navbar-right">
+          <a href="http://localhost/_DatabaseProject/PharmaSys/views/manager_view.php" class="navbar-link">'
+            .$name
+          .'</a></p>';
+else
+  echo   '<form class="navbar-form navbar-right" role="sign-in">
             <button type="button" id="btn_sign_in" class="btn btn-primary ">
               <span class="glyphicon glyphicon-user"></span>Sign In
             </button>
-          </form>
-          <form class="navbar-form navbar-right" role="search">
+          </form>';
+
+echo     '<form class="navbar-form navbar-right" role="search">
             <div class="form-group left-inner-addon">
               <input type="text" class="form-control" placeholder="Search">
               <i class="glyphicon glyphicon-search"></i>
@@ -44,4 +52,5 @@ echo '<!-- navbar -->
         </div><!-- /.nav-collapse -->
       </div><!-- /.container -->
     </div><!-- /.navbar -->';
+//echo "<script type='text/javascript' >alert('done navbar');</script>";
 ?>

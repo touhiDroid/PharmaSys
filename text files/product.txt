@@ -1,8 +1,8 @@
  CREATE TABLE product(
-product_code NUMBER(10),
-product_name VARCHAR(20),
-product_origin VARCHAR(20),
-pack_size NUMBER(4),
-trade_price NUMBER(5),
-trade_price_vat NUMBER(5)
+	product_code 	NUMBER(10),
+	product_name 	VARCHAR(20),
+	product_origin 	VARCHAR(20),
+	pack_size 		NUMBER(4),
+	trade_price 	NUMBER(5),
+	trade_price_vat NUMBER(5)
 );

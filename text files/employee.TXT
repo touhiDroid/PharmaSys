@@ -62,6 +62,3 @@ insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,di
  insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
  salary,gender,join_date,birth_date) values('xyz','MANAGER','Touhid','68/A','2','MIRPUR','Dhaka','01674740348',
  'tz08128@gmail.com',50000,'male','12-APR-2006','2-JUL-1979');
- 
- 
- 

@@ -78,3 +78,59 @@ jQuery(function($) {
 	}
 	/************** end: functions. **************/
 }); // jQuery End
+
+$( document ).ready(function() {
+	/*$( "#show_news" ).click(function() {
+		var newsHead=$("#news_head").val();
+		var newsBody=$("#news_body").val();
+		var newsCat=$("#news_category :selected").text();
+		var imgPath=$("news_image").src;
+		$("#news_view").html("");
+	});*/
+	
+	
+	var fn = $('#form_signin');
+	var ln = $('#loader'); // loder.gif image
+	$( "#btn_sign_in_f" ).click(function() {
+		//alert("clicked");
+		fn.ajaxForm({
+			beforeSend: function(){
+				//alert("beforeSend");
+				ln.show();
+			},
+			success: function(e){
+				if(e=="Successfully signed in!"){
+					window.location = 'http://localhost/_DatabaseProject/PharmaSys/views/manager_view.php';
+				}
+				else
+					alert(""+e);
+				//loadProfile();
+				/*var nh=$('#news_head').val();
+	    		var nb=$('#news_body').val();
+	    		var nc=$('#news_category :selected').text();
+				ln.hide();
+				fn.resetForm();
+				$("#news_view").html(
+						"<div class='title'><span id='SP2'>"+e+" as below:</span></div>"
+    					+"<div class='title'><span id='SP3'>"+nh+"</span></div>"
+	    				+"<img class='img_centered' src='uploads/_Alhamdulillah_NewsUp.jpg' /></br></br>"
+	    				+"<span class='title_line' >Category : "+nc+"</span>"
+	    				+"<p class='news_body_show'>"+nb+"</p>"
+					);*/
+				//alert(e);
+			},
+			error: function(e){
+				alert("Error in the signin.php. Check Touhid.");
+			}
+		});
+	});
+
+});
+
+/*function loadProfile(){
+	$("#div_shower").html(
+		"
+
+		"
+		);
+}*/
