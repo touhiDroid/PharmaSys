@@ -155,15 +155,15 @@
 
 14. CREATE TABLE DepoManager(
 	emp_id NUMBER(11),
-	depo_id NUMBER(11),
+	depo_id 	NUMBER(11),
 	depo_name VARCHAR(10),
 	area_code VARCHAR(10),
 	house_no	VARCHAR (5),
-	road_no	VARCHAR (5),
+	road_no		VARCHAR (5),
 	post_office VARCHAR (15),
 	district	VARCHAR (15),
 	phone_no	VARCHAR (15),
-	email		VARCHAR (25),
+	email		VARCHAR (25)
 );
 
 15. CREATE TABLE orders(

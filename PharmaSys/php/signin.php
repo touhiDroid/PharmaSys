@@ -21,7 +21,7 @@
 		            //$row=oci_fetch_array($result);
 		            if( $row=oci_fetch_array($result) ){
 		            	// Do log in jobs: 1. save sesssion info, 2. Redirect to profile page
-		            	saveSession($row[0], $row[1], $row[2]);
+		            	saveSession( $row[0], $row[1], $row[2] );
 		            	//echo "".$row[0];
 						/*session_start();
 						$_SESSION [ 'u_id' ] = $u_id;

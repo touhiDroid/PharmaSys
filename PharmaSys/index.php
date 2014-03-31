@@ -85,7 +85,7 @@
                     </div>
                     <div class="input-group" style="margin 50px;">
                       <span class="input-group-addon">Password: </span>
-                      <input type="text" name="u_pwd" id="u_pwd" class="form-control" placeholder="Password">
+                      <input type="password" name="u_pwd" id="u_pwd" class="form-control" placeholder="Password">
                       <span class="input-group-btn">
                         <input type="submit" id="btn_sign_in_f" class="btn btn-default" value="Sign In"/>
                       </span>

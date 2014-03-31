@@ -1,0 +1,11 @@
+ CREATE TABLE ppm_mio(
+emp_id NUMBER (11),
+ppm_id NUMBER (11),
+quantity NUMBER(4),
+received_date DATE,
+primary key(emp_id,ppm_id)
+);
+
+data// emp_id,starts from 100
+insert into ppm_mio values(103,100,50,'25-MAR-2014');
+insert into ppm_mio values(104,100,50,'25-MAR-2014');

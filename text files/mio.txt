@@ -1,0 +1,10 @@
+CREATE TABLE mio(
+emp_id NUMBER (11),
+mio_manager_id NUMBER (11),
+category VARCHAR(35),
+primary key(emp_id)
+);
+insert into mio values(103,104,'OPHTHALMIC PREPARATIONS');
+insert into mio values(104,104,'ANESTHETIC PRODUCTS');
+insert into mio values(105,104,'ACI SYNERGY');
+insert into mio values(106,104,'ACI LANGERHENS');

@@ -1,0 +1,20 @@
+CREATE TABLE mio_visit_pharmacy(
+	mio_id 		NUMBER (11),
+	pharmacy_id 	NUMBER (11),
+	visit_day	NUMBER(2),
+	visit_month  NUMBER(2),
+	visit_year    NUMBER(5),
+	visit_hour     NUMBER(2),
+	visit_min   NUMBER(2),
+	visit_done 	CHAR(1) default('0'),
+	primary key(mio_id,pharmacy_id,visit_day,visit_month,visit_year)
+);
+
+create or replace procedure insert_mio_visit_pharmacy(mid mio_visit_pharmacy.mio_id%type,pid mio_visit_pharmacy.pharmacy_id%type,
+vday mio_visit_pharmacy.visit_day%type,vmonth mio_visit_pharmacy.visit_month%type,vy mio_visit_pharmacy.visit_year%type,
+vh mio_visit_pharmacy.visit_hour%type,vm mio_visit_pharmacy.visit_min%type)is
+begin
+  insert into mio_visit_pharmacy values(mid,pid,vday,vmonth,vy,vh,vm,'0');
+
+end;
+/

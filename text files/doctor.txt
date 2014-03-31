@@ -22,7 +22,7 @@ create SEQUENCE set_doctor_id
  increment by 1
  cache 20;
  
-create or replace trigger trigger_doctor_id
+ create or replace trigger trigger_doctor_id
 before insert on doctor
 for each row
 begin 

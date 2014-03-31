@@ -1,0 +1,6 @@
+CREATE TABLE stock_product(
+	stock_id NUMBER(11),
+	product_code VARCHAR(10),
+	quantity NUMBER(4),
+	primary key(stock_id,product_code)
+);

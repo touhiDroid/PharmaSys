@@ -1,0 +1,24 @@
+ CREATE TABLE stock(
+	stock_id NUMBER(11),
+	depo_id NUMBER(11),
+	received_date DATE,
+	supply_date  DATE,
+	primary key(stock_id)
+);
+
+create SEQUENCE set_stock_id
+ start with 100
+ increment by 1
+ cache 20;
+ 
+create or replace trigger trigger_stock_id
+before insert on stock
+for each row
+begin 
+ :new.stock_id:=set_stock_id.nextval;
+ end;
+ /
+ 
+insert into stock(depo_id,received_date,supply_date) values(100,'20-MAR-2014','18-MAR-2014');
+insert into stock(depo_id,received_date,supply_date) values(101,'31-MAR-2014','29-MAR-2014');
+insert into stock(depo_id,received_date,supply_date) values(101,'31-MAR-2014','29-MAR-2014');

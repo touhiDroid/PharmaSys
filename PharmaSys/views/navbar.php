@@ -32,10 +32,12 @@ echo '<!-- navbar -->
           </ul>';
 $name = getSessionEmployeeName();
 if( isSessionSet() )
+  { // TODO : Navigate for other 3 users by checking types: "MANAGER", "MIO MANAGER", "DEPOT MANAGER", "MIO"
   echo  '<p class="navbar-text navbar-right">
           <a href="http://localhost/_DatabaseProject/PharmaSys/views/manager_view.php" class="navbar-link">'
             .$name
           .'</a></p>';
+}
 else
   echo   '<form class="navbar-form navbar-right" role="sign-in">
             <button type="button" id="btn_sign_in" class="btn btn-primary ">
@@ -43,9 +45,9 @@ else
             </button>
           </form>';
 
-echo     '<form class="navbar-form navbar-right" role="search">
+echo     '<form class="navbar-form navbar-right" role="search" action="search.php">
             <div class="form-group left-inner-addon">
-              <input type="text" class="form-control" placeholder="Search">
+              <input type="text" name="search_val" id="search_val" class="form-control" placeholder="Search">
               <i class="glyphicon glyphicon-search"></i>
             </div>
           </form>

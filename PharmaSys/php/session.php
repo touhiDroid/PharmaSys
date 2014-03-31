@@ -1,8 +1,8 @@
 <?php
 	
-	$KEY_ID='u_id';
-	$KEY_NAME='u_name';
-	$KEY_TYPE='u_type';
+	// 'u_id';
+	// 'u_name';
+	// 'u_type';
 
 	//echo "<script type='text/javascript' >alert('inside session.php');</script>";
 
@@ -16,11 +16,11 @@
 		echo  $KEY_ID .", ". $KEY_NAME .", ". $KEY_TYPE ;*/
 		if (!is_writable(session_save_path())) {
     		echo 'Session path "'.session_save_path().'" is not writable for PHP!'; 
-}
+		}
 	}
 
 	function isSessionSet(){
-		if( isset($_SESSION [ 'u_type' ]) )
+		if( isset($_SESSION [ 'u_id' ]) )
 			return true;
 		else
 			return false;

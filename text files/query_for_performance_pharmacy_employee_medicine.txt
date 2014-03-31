@@ -1,0 +1,30 @@
+
+//which product sell best
+select product_code,sum(quantity) from order_product  group by product_code
+order by sum(quantity) desc;
+
+//product with price
+
+select op.product_code,p.trade_price_vat,sum(op.quantity),sum(op.quantity*p.trade_price_vat) 
+from order_product op,product p where op.product_code=p.product_code 
+group by op.product_code,p.trade_price_vat order by sum(op.quantity*p.trade_price_vat) desc;
+
+
+// emplyee basis sell 
+select o.emp_id, op.product_code,sum(op.quantity),sum(op.quantity*p.trade_price_vat) 
+from order_product op,product p,orders o 
+where o.emp_id=105 and o.order_id=op.order_id and op.product_code=p.product_code 
+group by op.product_code,o.emp_id order by sum(op.quantity*p.trade_price_vat) desc;
+
+
+//get all orders with pharmacy id
+
+select o.pharmacy_id,o.emp_id,o.order_id,o.order_date,op.product_code,op.quantity 
+from orders o,order_product op
+ where o.order_id=op.order_id order by o.order_date desc,o.pharmacy_id asc;
+ 
+ //select orderlist
+ select o.order_id,o.emp_id,p.pharmacy_id,p.name,o.order_date from orders o, pharmacy p where o.completed='0' and p.pharmacy_id=o.pharmacy_id order by pharmacy_id;
+ 
+ //select a specifiq order
+ select * from order_product where order_id=$obj->order_id;
