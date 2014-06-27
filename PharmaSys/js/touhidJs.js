@@ -22,13 +22,13 @@ jQuery(function($) {
 
 	/* event for close the popup */
 	$("div.close").hover(
-					function() {
-						$('span.ecs_tooltip').show();
-					},
-					function () {
-    					$('span.ecs_tooltip').hide();
-  					}
-				);
+		function() {
+			$('span.ecs_tooltip').show();
+		},
+		function () {
+			$('span.ecs_tooltip').hide();
+			}
+	);
 
 	$("div.close").click(function() {
 		disablePopup();  // function close pop up
@@ -40,13 +40,13 @@ jQuery(function($) {
 		}
 	});
 
-        $("div#backgroundPopup").click(function() {
+    $("div#backgroundPopup").click(function() {
 		disablePopup();  // function close pop up
 	});
 
 	$('a.livebox').click(function() {
 		alert('Hello World!');
-	return false;
+		return false;
 	});
 
 	 /************** start: functions. **************/
@@ -99,11 +99,23 @@ $( document ).ready(function() {
 				ln.show();
 			},
 			success: function(e){
-				if(e=="Successfully signed in!"){
+				alert("sign in success: "+e);
+				var jObj = JSON.parse(e);
+				if(jObj.EMP_TYPE=="MANAGER"){
 					window.location = 'http://localhost/_DatabaseProject/PharmaSys/views/manager_view.php';
 				}
+				else if(jObj.EMP_TYPE=="MIO"){
+					window.location = 'http://localhost/_DatabaseProject/PharmaSys/views/mio_view.php';
+					localStorage.setItem("user_id",jObj.EMP_ID);
+					alert("Local sotrage"+localStorage.getItem("user_id"));
+				}
+				else if(jObj.EMP_TYPE=="DEPOT MANAGER"){
+					window.location = 'http://localhost/_DatabaseProject/PharmaSys/views/dm_view.php';
+					localStorage.setItem("user_id",jObj.EMP_ID);
+					alert("Local sotrage"+localStorage.getItem("user_id"));
+				}
 				else
-					alert(""+e);
+					alert("Type Mismatch:   "+jObj.EMP_TYPE);
 				//loadProfile();
 				/*var nh=$('#news_head').val();
 	    		var nb=$('#news_body').val();

@@ -19,3 +19,17 @@ insert into product(product_code,product_name,pack_size,trade_price,trade_price_
 insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-EMP1','EMP 20 TABLET',10,100.23,120.92);
 insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-GRH1','Giran 8 Tablet','20',187.87,219.92);
 insert into product(product_code,product_name,pack_size,trade_price,trade_price_vat)values('TAB-HPN1','Hepaximin 200 Tablet','20',300.75,351.88);
+
+create or replace procedure insert_product(
+pcd product.product_code%type,
+pnm product.product_name%type,
+pog product.product_origin%type,
+cat product.catagory%type,
+psz product.pack_size%type,
+tp product.trade_price%type,
+tpv product.trade_price_vat%type)is
+begin
+  insert into product(product_code,product_name,product_origin,catagory,pack_size,trade_price,trade_price_vat) values(pcd,pnm,pog,cat,psz,tp,tpv);
+
+end;
+/

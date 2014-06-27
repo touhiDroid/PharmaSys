@@ -28,6 +28,7 @@ insert into orders(pharmacy_id,emp_id,order_date) values(102,104,'29-MAR-2014');
 insert into orders(pharmacy_id,emp_id,order_date) values(103,105,'30-MAR-2014');
 insert into orders(pharmacy_id,emp_id,order_date) values(101,105,'30-MAR-2014');
 insert into orders(pharmacy_id,emp_id,order_date) values(102,105,'30-MAR-2014');
+<<<<<<< HEAD
 insert into orders(pharmacy_id,emp_id,order_date) values(103,105,'30-MAR-2014');
 
 create or replace procedure insert_order(eid orders.emp_id%type,pid orders.pharmacy_id%type,
@@ -37,3 +38,6 @@ begin
 
 end;
 /
+=======
+insert into orders(pharmacy_id,emp_id,order_date) values(103,105,'30-MAR-2014');
+>>>>>>> ed9732f6b341d77af3a8f05a3e3101747e3052b6

@@ -125,6 +125,12 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="salary" class="col-sm-2 control-label">Salary:</label>
+                    <input class="form-control" style="width: 50%;" type="text" name="salary" id="salary" placeholder="Salary"/></br>
+                </div>
+
+
+                <div class="form-group">
                     <label for="join_date" class="col-sm-2 control-label">Join Date:</label>
                     <input class="form-control" style="width: 50%;" type="text" name="join_date" id="join_date" placeholder="DD-MMM-YY"/></br>
                 </div>
@@ -139,10 +145,10 @@
                     <input class="form-control" style="width: 50%;" type="text" name="area_code" id="area_code" placeholder="Area Code"/></br>
                 </div>
 
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <p>Please specify a file:
                     <input class="form-control" style="width: 50%;" type="file" name="emp_cv" size="40"></p>
-                </div>
+                </div> -->
 
                 <div class="form-group" style="align:center;">
                     <input type="submit" id="save_emp" name="save_emp" class="btn btn-primary" value="Save Employee"/>

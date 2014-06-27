@@ -15,7 +15,7 @@
     <script src="http://localhost/_DatabaseProject/PharmaSys/js/JQuery/jquery-1.9.1.js" type="text/javascript"></script>
     <script src="http://localhost/_DatabaseProject/PharmaSys/js/JQuery/jquery.form.js" type="text/javascript"></script>
     
-    <script>
+    <script type="text/javascript">
         function init()
         {
             var xmlhttp;
@@ -32,7 +32,7 @@
                 if (xmlhttp.readyState==4 && xmlhttp.status==200)
                 {
                     var json=xmlhttp.responseText;
-        
+
 					json=JSON.parse(json);
 
 					var table=document.getElementById("products");

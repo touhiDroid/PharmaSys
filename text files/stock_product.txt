@@ -4,3 +4,27 @@ CREATE TABLE stock_product(
 	quantity NUMBER(4),
 	primary key(stock_id,product_code)
 );
+create or replace procedure insert_stock_product(sid stock_product.stock_id%type,pc stock_product.product_code%type,
+q stock_product.quantity%type)is
+begin
+  insert into stock_product(stock_id,product_code,quantity) values(sid,pc,q);
+
+end;
+/
+
+create or replace trigger trigger_update_depo_product
+after insert on stock_product
+for each row
+declare
+ q depo_product_count.quantity%type;
+begin 
+select quantity into q from depo_product_count where depo_id=(select depo_id from stock where stock_id=:new.stock_id) and product_code=:new.product_code;
+q:=q+:new.quantity;
+update depo_product_count set quantity=q  where depo_id=(select depo_id from stock where stock_id=:new.stock_id) and product_code=:new.product_code;
+ end;
+ /
+ 
+ //query
+ select quantity  from depo_product_count where depo_id=(select depo_id from stock where stock_id=103) and product_code='TAB-ACZ2';
+ 
+ insert into stock_product values(100,'TAB-GRH1',12);

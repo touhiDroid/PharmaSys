@@ -106,12 +106,6 @@
                     <input class="form-control" style="width: 75%;" type="text" name="products" id="products" placeholder="Comma Separated Product IDs with quantity preceded : as - TABN1:20,TABN23:12"/></br>
                 </div>
 
-                <!-- <div class="form-group">
-                    <label for="new_product" class="col-sm-2 control-label">House No:</label>
-                    <input class="form-control" style="width: 50%;" type="text" name="new_product" id="new_product" placeholder="Product Code"/></br>
-                    <button id="add_product" type="button" class="btn btn-info">Add Product</button>
-                </div> -->
-
                 <div class="form-group" style="float: center;">
                     <input type="submit" id="save_stock" name="save_emp" class="btn btn-primary" value="Save Employee"/>
                 </div>

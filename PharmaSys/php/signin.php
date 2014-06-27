@@ -27,7 +27,7 @@
 						$_SESSION [ 'u_id' ] = $u_id;
 						$_SESSION [ 'u_name' ] = $row['emp_name'];
 						$_SESSION [ 'u_type' ] = $row['emp_type'];*/
-		            	echo "Successfully signed in!";
+		            	echo json_encode($row);
 			            oci_free_statement($result);
 			            oci_close($con);
 		            	exit(0);

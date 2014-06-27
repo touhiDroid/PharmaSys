@@ -32,9 +32,20 @@ echo '<!-- navbar -->
           </ul>';
 $name = getSessionEmployeeName();
 if( isSessionSet() )
-  { // TODO : Navigate for other 3 users by checking types: "MANAGER", "MIO MANAGER", "DEPOT MANAGER", "MIO"
-  echo  '<p class="navbar-text navbar-right">
+{ // TODO : Navigate for other 3 users by checking types: "MANAGER", "MIO MANAGER", "DEPOT MANAGER", "MIO"
+  if(getSessionEmployeeType()=="MANAGER")
+    echo  '<p class="navbar-text navbar-right">
           <a href="http://localhost/_DatabaseProject/PharmaSys/views/manager_view.php" class="navbar-link">'
+            .$name
+          .'</a></p>';
+  else if(getSessionEmployeeType()=="MIO")
+    echo  '<p class="navbar-text navbar-right">
+          <a href="http://localhost/_DatabaseProject/PharmaSys/views/mio_view.php" class="navbar-link">'
+            .$name
+          .'</a></p>';
+  else if(getSessionEmployeeType()=="DEPOT MANAGER")
+    echo  '<p class="navbar-text navbar-right">
+          <a href="http://localhost/_DatabaseProject/PharmaSys/views/dm_view.php" class="navbar-link">'
             .$name
           .'</a></p>';
 }
@@ -45,7 +56,7 @@ else
             </button>
           </form>';
 
-echo     '<form class="navbar-form navbar-right" role="search" action="search.php">
+echo     '<form class="navbar-form navbar-right" role="search" method="POST" action="views/php/search.php">
             <div class="form-group left-inner-addon">
               <input type="text" name="search_val" id="search_val" class="form-control" placeholder="Search">
               <i class="glyphicon glyphicon-search"></i>

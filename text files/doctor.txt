@@ -39,3 +39,27 @@ begin
  insert into doctor(name,house_no,road_no,post_office,district,phone_no,email,gender,degree,speciality,institution,
  num_patient_per_day,birth_day,marriage_day) values('Touhid Reza','90','4','Akua','Mymensingh','0125421585','rreza@gmail.com',
  'male','mbbs','surgery','Mymensingh Medical College Hospital',120,'12-JAN-1982','11-MAR-2000');
+ 
+create or replace procedure insert_doctor(
+dname doctor.name%type,
+hn doctor.house_no%type,
+rn doctor.road_no%type,
+po doctor.post_office%type,
+dist doctor.district%type,
+phn doctor.phone_no%type,
+eml doctor.email%type,
+gend doctor.gender%type,
+deg doctor.degree%type,
+spec doctor.speciality%type,
+inst doctor.institution%type,
+nppd doctor.num_patient_per_day%type,
+bd doctor.birth_day%type,
+md doctor.marriage_day%type)is
+begin
+  insert into doctor(name,house_no,road_no,post_office,district,phone_no,email,gender,degree,speciality,institution,num_patient_per_day,birth_day,marriage_day) values(dname,hn,rn,po,dist,phn,eml,gend,deg,spec,inst,nppd,bd,md);
+
+end;
+/
+
+call insert_doctor( 'Debo Bisshwash','90','4','Akua','Mymensingh','0125421585','dbreza@gmail.com',
+ 'male','mbbs','surgery','Mymensingh Medical College Hospital',120,'12-JAN-1982','11-MAR-2000') ;

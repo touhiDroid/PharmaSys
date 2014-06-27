@@ -62,7 +62,31 @@ insert into employee (password,emp_type,emp_name,house_no,road_no,post_office,di
  salary,gender,join_date,birth_date,area_code) values('abcd','MIO','Mokbul haq','110/c','2','Rajarbag','Dhaka','017842681',
  'maokbulhoq@yahoo.com',12000,'male','1-JAN-2008','2-FEB-1984',101);
  
+create or replace procedure insert_employee(
+pwd employee.password%type,
+typ employee.emp_type%type,
+ename employee.emp_name%type,
+hn employee.house_no%type,
+rn employee.road_no%type,
+po employee.post_office%type,
+dist employee.district%type,
+phn employee.phone_no%type,
+eml employee.email%type,
+sal employee.salary%type,
+gend employee.gender%type,
+jd employee.join_date%type,
+bd employee.birth_date%type,
+ac employee.area_code%type)is
+begin
+  insert into employee(password,emp_type,emp_name,house_no,road_no,post_office,district,phone_no,email,
+ salary,gender,join_date,birth_date,area_code) values(
+ pwd,typ, ename, hn,rn,po,dist,phn,eml,sal,gend,jd,bd,ac );
+
+end;
+/
  
+call insert_employee('qwe','MIO','Mahmudul haq','110/D','20','Rajarbag','Dhaka','017842681',
+ 'maokbulhoq@yahoo.com',12000,'male','1-JAN-2000','2-FEB-1984',101);
 
  
  

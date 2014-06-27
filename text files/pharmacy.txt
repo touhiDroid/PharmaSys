@@ -30,4 +30,22 @@ begin
  insert into pharmacy(name,area_code,house_no,road_no,post_office,district,phone_no,email,sell_amount_per_day,established_date)
  values('Modern Pharmacy',102,'90','11','Mirour','Dhaka','016734527','mito_hlw@gmail.com',120000,'11-NOV-2005');
  
+create or replace procedure insert_pharmacy(
+	pname pharmacy.name%type,
+    ac pharmacy.area_code%type,
+    hn pharmacy.house_no%type,
+    rn pharmacy.road_no%type,
+    po pharmacy.post_office%type,
+    dist pharmacy.district%type,
+    phn pharmacy.phone_no%type,
+    eml pharmacy.email%type,
+	sapd pharmacy.sell_amount_per_day%type,
+	ed pharmacy.established_date%type)is
+   begin
+     insert into pharmacy(name,area_code,house_no,road_no,post_office,district,phone_no,email,sell_amount_per_day,established_date)
+	 values(pname, ac, hn,rn,po,dist,phn,eml,sapd,ed);
+ 
+   end;
+   /
+ 
  commit;

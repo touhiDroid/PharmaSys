@@ -1,5 +1,6 @@
 <?php
  $conn=oci_connect('system','touhid18','localhost/orcl');
+
 $sql="select * from product";
 $result=oci_parse($conn,$sql);
 oci_execute($result);

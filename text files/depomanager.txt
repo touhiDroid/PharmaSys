@@ -1,0 +1,16 @@
+CREATE TABLE DepoManager(
+	emp_id NUMBER(11),
+	depo_id NUMBER(11),
+	depo_name VARCHAR(10),
+	area_code NUMBER(10),
+	house_no	VARCHAR (5),
+	road_no	VARCHAR (5),
+	post_office VARCHAR (15),
+	district	VARCHAR (15),
+	phone_no	VARCHAR (15),
+	email		VARCHAR (25),
+	primary key(depo_id)
+);
+insert into DepoManager values(103,100,'NEW DEPO',100,'2/A','12','Mirpur','Dhaka','02345657','tanzs@hotmail.com');
+
+select * from stock where depo_id=(select depo_id from depomanager where emp_id=$obj->user_id);

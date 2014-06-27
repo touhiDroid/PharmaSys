@@ -1,0 +1,11 @@
+Pharmaceutical Company Management System
+Module name: Medicine distribution field work management System
+Student Id: 1005029
+
+In a medicine company representatives go to different pharmacy to sell their company product .Each pharmacy is identified by a pharmacy id .Other information needed to store in database are pharmacy name, address, area code .Each pharmacy there is chemist who run that pharmacy .Each chemist is identified unique id .Other Information need to be stored are name, birthday, marriage day ,phone number .
+Again, representatives visit doctors to sell their product .Doctors are identified by doctor id .Other necessary information for doctors are name, phone, birthday, marriage day, hospital, degree, spatiality and number of patient.
+
+Medicine representative often suggest new pharmacy and doctors if there is new pharmacy in the area .For suggesting a new pharmacy we need to add pharmacy name, area code and address. For suggesting doctors we need name, phone, birthday, marriage day, hospital, degree, specialty and number of patient per day .For suggesting new chemist or adding new chemist necessary information are  name, birthday, marriage day , pharmacy id, phone number.
+
+
+Representatives provides a order list to local depot of the company .To store a order we need to store pharmacy id ,medicine code, medicine name ,quantity, price and date

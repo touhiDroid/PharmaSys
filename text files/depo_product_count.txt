@@ -1,0 +1,15 @@
+create table depo_product_count(
+depo_id NUMBER(11),
+product_code VARCHAR(10),
+quantity NUMBER(11),
+primary key (depo_id,product_code)
+);
+insert into depo_product_count values(100,'TAB-ACZ2',0);
+insert into depo_product_count values(100,'TAB-ACS2',0);
+insert into depo_product_count values(100,'TAB-AFX1',0);
+insert into depo_product_count values(100,'TAB-AFX2',0);
+insert into depo_product_count values(100,'TAB-BLN1',0);
+insert into depo_product_count values(100,'TAB-CLN3',0);
+insert into depo_product_count values(100,'TAB-CLD1',0);
+insert into depo_product_count values(100,'TAB-EMP1',0);
+insert into depo_product_count values(100,'TAB-GRH1',0);
